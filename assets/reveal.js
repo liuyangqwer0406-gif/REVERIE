@@ -1,8 +1,19 @@
-/* REVERIE — scroll reveal + cursor + magnetic motion */
+/* REVERIE — scroll reveal + cursor + magnetic motion (single rAF loop) */
 (function () {
   'use strict';
 
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var animQueue = [];
+
+  /* ── Unified animation scheduler ───────────────────────────────────── */
+  function addAnim(fn) { if (typeof fn === 'function' && animQueue.indexOf(fn) < 0) animQueue.push(fn); }
+
+  function tickAll() {
+    if (document.hidden) { requestAnimationFrame(tickAll); return; }
+    for (var i = 0; i < animQueue.length; i++) animQueue[i]();
+    requestAnimationFrame(tickAll);
+  }
+  requestAnimationFrame(tickAll);
 
   // ── Splash screen ──────────────────────────────────────────────────
   try {
@@ -46,6 +57,7 @@
   })();
 
   // ── Cursor (dual mass-spring w/ overshoot resonance — Emil Kowalski) ──
+  var cursorState = null;
   if (!reduced) {
     var dot = document.createElement('div');
     dot.className = 'cursor-dot';
@@ -54,52 +66,54 @@
     document.body.appendChild(ring);
     document.body.appendChild(dot);
 
-    var mx = -200, my = -200;
-    var rx = -200, ry = -200, vx = 0, vy = 0;
-    var sx = -200, sy = -200, svx = 0, svy = 0;
-    var stiffness = 0.072, damping = 0.68;
-    var sStiff = 0.028, sDamp = 0.64;
-    var s = 1, sv = 0, hov = false;
+    cursorState = {
+      mx: -200, my: -200,
+      rx: -200, ry: -200, vx: 0, vy: 0,
+      sx: -200, sy: -200, svx: 0, svy: 0,
+      s: 1, sv: 0, hov: false,
+      idleT: 0
+    };
     var hv = 'a, button, .craft-card, .world-row, .frame, .chip, .btn, .portrait, .magnetic, .lb-overlay, .is-zoomable, .site-nav a, input, textarea, select';
-    var idleT = 0;
 
     document.addEventListener('mousemove', function (e) {
-      mx = e.clientX; my = e.clientY;
-      dot.style.transform = 'translate(' + mx + 'px,' + my + 'px)';
-      try { var el = document.elementFromPoint(mx, my); hov = !!(el && el.closest(hv)); } catch (_) {}
+      cursorState.mx = e.clientX; cursorState.my = e.clientY;
+      dot.style.transform = 'translate(' + e.clientX + 'px,' + e.clientY + 'px)';
+      try { var el = document.elementFromPoint(e.clientX, e.clientY); cursorState.hov = !!(el && el.closest(hv)); } catch (_) {}
     });
 
-    function tickSpring() {
-      // Primary spring (ring core)
-      var dx = mx - rx, dy = my - ry;
-      vx = (vx + dx * stiffness) * damping;
-      vy = (vy + dy * stiffness) * damping;
-      rx += vx; ry += vy;
+    function tickCursor() {
+      var c = cursorState;
+      // Primary spring
+      var dx = c.mx - c.rx, dy = c.my - c.ry;
+      c.vx = (c.vx + dx * 0.072) * 0.68;
+      c.vy = (c.vy + dy * 0.072) * 0.68;
+      c.rx += c.vx; c.ry += c.vy;
 
-      // Secondary spring — follows primary with lag = overshoot resonance
-      var sdx = rx - sx, sdy = ry - sy;
-      svx = (svx + sdx * sStiff) * sDamp;
-      svy = (svy + sdy * sStiff) * sDamp;
-      sx += svx; sy += svy;
+      // Secondary spring
+      var sdx = c.rx - c.sx, sdy = c.ry - c.sy;
+      c.svx = (c.svx + sdx * 0.028) * 0.64;
+      c.svy = (c.svy + sdy * 0.028) * 0.64;
+      c.sx += c.svx; c.sy += c.svy;
 
-      // Scale spring — overshoots on hover entry
-      var ht = hov ? 1.18 : 1;
-      sv = (sv + (ht - s) * 0.082) * 0.71;
-      s += sv;
+      // Scale spring
+      var ht = c.hov ? 1.18 : 1;
+      c.sv = (c.sv + (ht - c.s) * 0.082) * 0.71;
+      c.s += c.sv;
 
-      // Idle micro-wobble (barely perceptible, only when stationary)
-      idleT += 0.008;
-      var drift = Math.sin(idleT * 0.6) * 0.4;
+      // Idle micro-wobble
+      c.idleT += 0.008;
+      var drift = Math.sin(c.idleT * 0.6) * 0.4;
 
-      ring.className = 'cursor-ring' + (hov ? ' is-hover' : '');
-      ring.style.transform = 'translate(' + (sx + drift) + 'px,' + (sy + drift * 0.7) + 'px) scale(' + s + ')';
-      requestAnimationFrame(tickSpring);
+      ring.className = 'cursor-ring' + (c.hov ? ' is-hover' : '');
+      ring.style.transform = 'translate(' + (c.sx + drift) + 'px,' + (c.sy + drift * 0.7) + 'px) scale(' + c.s + ')';
     }
-    tickSpring();
+    addAnim(tickCursor);
+    // Force 0.5s idle before first tick to avoid initial flash
+    setTimeout(function () { if (cursorState) { cursorState.idleT = 0; } }, 500);
 
-    // Click micro-feedback (spring pop)
-    document.addEventListener('mousedown', function () { dot.classList.add('is-active'); sv = -0.14; });
-    document.addEventListener('mouseup', function () { dot.classList.remove('is-active'); sv = 0.1; setTimeout(function () { sv = 0; }, 80); });
+    // Click micro-feedback
+    document.addEventListener('mousedown', function () { dot.classList.add('is-active'); if (cursorState) cursorState.sv = -0.14; });
+    document.addEventListener('mouseup', function () { dot.classList.remove('is-active'); if (cursorState) cursorState.sv = 0.1; setTimeout(function () { if (cursorState) cursorState.sv = 0; }, 80); });
 
     var itmr;
     document.addEventListener('mousemove', function () {
@@ -110,6 +124,7 @@
   }
 
   // ── Nav underline spring follower ────────────────────────────────
+  var navState = null;
   (function () {
     var nav = document.querySelector('.site-nav');
     if (!nav || reduced) return;
@@ -126,25 +141,26 @@
     }
 
     var active = getActive();
-    var target = pos(active), cur = { left: target.left, width: target.width, opacity: target.opacity };
+    var tp = pos(active);
+    navState = { cur: { left: tp.left, width: tp.width, opacity: tp.opacity }, target: { left: tp.left, width: tp.width, opacity: tp.opacity } };
 
     links.forEach(function (link) {
-      link.addEventListener('mouseenter', function () { var p = pos(link); target.left = p.left; target.width = p.width; target.opacity = p.opacity; });
-      link.addEventListener('mouseleave', function () { var p = pos(getActive()); target.left = p.left; target.width = p.width; target.opacity = p.opacity; });
+      link.addEventListener('mouseenter', function () { var p = pos(link); navState.target.left = p.left; navState.target.width = p.width; navState.target.opacity = p.opacity; });
+      link.addEventListener('mouseleave', function () { var p = pos(getActive()); navState.target.left = p.left; navState.target.width = p.width; navState.target.opacity = p.opacity; });
     });
 
     function tickNav() {
-      cur.left += (target.left - cur.left) * 0.13;
-      cur.width += (target.width - cur.width) * 0.13;
-      cur.opacity += (target.opacity - cur.opacity) * 0.13;
-      indicator.style.transform = 'translateX(' + cur.left + 'px)';
-      indicator.style.width = cur.width + 'px';
-      indicator.style.opacity = cur.opacity;
-      requestAnimationFrame(tickNav);
+      navState.cur.left += (navState.target.left - navState.cur.left) * 0.13;
+      navState.cur.width += (navState.target.width - navState.cur.width) * 0.13;
+      navState.cur.opacity += (navState.target.opacity - navState.cur.opacity) * 0.13;
+      indicator.style.transform = 'translateX(' + navState.cur.left + 'px)';
+      indicator.style.width = navState.cur.width + 'px';
+      indicator.style.opacity = navState.cur.opacity;
     }
     setTimeout(function () {
-      var p = pos(getActive()); cur.left = p.left; cur.width = p.width; cur.opacity = p.opacity; target.left = p.left; target.width = p.width; target.opacity = p.opacity;
-      tickNav();
+      var p = pos(getActive()); navState.cur.left = p.left; navState.cur.width = p.width; navState.cur.opacity = p.opacity;
+      navState.target.left = p.left; navState.target.width = p.width; navState.target.opacity = p.opacity;
+      addAnim(tickNav);
     }, 80);
   })();
 
@@ -158,7 +174,7 @@
     });
   })();
 
-  // ── Hero parallax (scroll-driven, Emil spring lerp) ─────────────────
+  // ── Hero parallax (scroll-driven, spring lerp) ─────────────────
   (function () {
     var hero = document.querySelector('.world-hero');
     var pageHero = document.querySelector('main.page > section:first-child');
@@ -166,73 +182,80 @@
     if (!target || reduced) return;
     if (!hero) target.style.backgroundAttachment = 'scroll';
 
-    var cur = 50, vel = 0, springStiff = 0.035, springDamp = 0.72;
+    var cur = 50, vel = 0;
 
     window.addEventListener('scroll', function () {
       var rect = target.getBoundingClientRect();
       var viewH = window.innerHeight;
-      var progress = 1 - (rect.bottom + rect.height * 0.2) / (viewH + rect.height * 1.4);
-      progress = Math.max(0, Math.min(1, progress));
-      target.style.setProperty('--parallax-progress', progress);
-    });
+      var p = 1 - (rect.bottom + rect.height * 0.2) / (viewH + rect.height * 1.4);
+      target.style.setProperty('--parallax-progress', Math.max(0, Math.min(1, p)));
+    }, { passive: true });
 
     function tickParallax() {
       var p = parseFloat(target.style.getPropertyValue('--parallax-progress')) || 0;
       var targetY = 30 + p * 10;
-      var d = targetY - cur;
-      vel = (vel + d * springStiff) * springDamp;
+      vel = (vel + (targetY - cur) * 0.035) * 0.72;
       cur += vel;
       target.style.backgroundPosition = '50% ' + cur + '%';
-      requestAnimationFrame(tickParallax);
     }
-    tickParallax();
+    addAnim(tickParallax);
   })();
 
   // ── Portrait tilt w/ spring smoothing (Emil) ──────────────────────
+  var tiltItems = [];
   (function () {
     var portraits = document.querySelectorAll('.craft-card .portrait');
     if (!portraits.length || reduced) return;
     portraits.forEach(function (p) {
-      var tx = 0, ty = 0, vx = 0, vy = 0, ttx = 0, tty = 0;
+      var state = { tx: 0, ty: 0, vx: 0, vy: 0, ttx: 0, tty: 0 };
       p.addEventListener('mousemove', function (e) {
         var r = p.getBoundingClientRect();
-        ttx = ((e.clientX - r.left) / r.width - 0.5) * 4;
-        tty = -((e.clientY - r.top) / r.height - 0.5) * 4;
+        state.ttx = ((e.clientX - r.left) / r.width - 0.5) * 4;
+        state.tty = -((e.clientY - r.top) / r.height - 0.5) * 4;
       });
-      p.addEventListener('mouseleave', function () { ttx = 0; tty = 0; });
-      function tickTilt() {
-        vx = (vx + (ttx - tx) * 0.07) * 0.76;
-        vy = (vy + (tty - ty) * 0.07) * 0.76;
-        tx += vx; ty += vy;
-        p.style.transform = 'scale(1.04) perspective(800px) rotateX(' + ty + 'deg) rotateY(' + tx + 'deg)';
-        requestAnimationFrame(tickTilt);
-      }
-      tickTilt();
+      p.addEventListener('mouseleave', function () { state.ttx = 0; state.tty = 0; });
+      tiltItems.push({ el: p, state: state });
     });
   })();
 
+  function tickTilts() {
+    for (var i = 0; i < tiltItems.length; i++) {
+      var item = tiltItems[i], s = item.state, st = 0.07, sd = 0.76;
+      s.vx = (s.vx + (s.ttx - s.tx) * st) * sd;
+      s.vy = (s.vy + (s.tty - s.ty) * st) * sd;
+      s.tx += s.vx; s.ty += s.vy;
+      item.el.style.transform = 'scale(1.04) perspective(800px) rotateX(' + s.ty + 'deg) rotateY(' + s.tx + 'deg)';
+    }
+  }
+  if (tiltItems.length) addAnim(tickTilts);
+
   // ── World-row thumbnail tilt w/ spring ─────────────────────────────
+  var rowTilts = [];
   (function () {
     var rows = document.querySelectorAll('.world-row .thumb');
     if (!rows.length || reduced) return;
     rows.forEach(function (thumb) {
-      var tx = 0, ty = 0, vx = 0, vy = 0, ttx = 0, tty = 0;
+      var state = { tx: 0, ty: 0, vx: 0, vy: 0, ttx: 0, tty: 0 };
       thumb.addEventListener('mousemove', function (e) {
         var r = thumb.getBoundingClientRect();
-        ttx = ((e.clientX - r.left) / r.width - 0.5) * 10;
-        tty = ((e.clientY - r.top) / r.height - 0.5) * 10;
+        state.ttx = ((e.clientX - r.left) / r.width - 0.5) * 10;
+        state.tty = ((e.clientY - r.top) / r.height - 0.5) * 10;
       });
-      thumb.addEventListener('mouseleave', function () { ttx = 0; tty = 0; });
-      function tickRow() {
-        vx = (vx + (ttx - tx) * 0.06) * 0.72;
-        vy = (vy + (tty - ty) * 0.06) * 0.72;
-        tx += vx; ty += vy;
-        thumb.style.transform = 'scale(1.04) translate(' + tx + 'px,' + ty + 'px)';
-        requestAnimationFrame(tickRow);
-      }
-      tickRow();
+      thumb.addEventListener('mouseleave', function () { state.ttx = 0; state.tty = 0; });
+      rowTilts.push({ el: thumb, s: state });
     });
   })();
+
+  function tickRowTilts() {
+    for (var i = 0; i < rowTilts.length; i++) {
+      var item = rowTilts[i], s = item.s;
+      s.vx = (s.vx + (s.ttx - s.tx) * 0.06) * 0.72;
+      s.vy = (s.vy + (s.tty - s.ty) * 0.06) * 0.72;
+      s.tx += s.vx; s.ty += s.vy;
+      item.el.style.transform = 'scale(1.04) translate(' + s.tx + 'px,' + s.ty + 'px)';
+    }
+  }
+  if (rowTilts.length) addAnim(tickRowTilts);
 
   // ── Image-strip frame tilt ─────────────────────────────────────────
   var frames = document.querySelectorAll('.image-strip .frame');

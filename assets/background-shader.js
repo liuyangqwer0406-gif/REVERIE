@@ -60,7 +60,7 @@ const uniforms = {
 
 /* ─── Main shader plane ───────────────────────────────────────────── */
 
-const geo = new THREE.PlaneGeometry(2, 2, 48, 48);
+const geo = new THREE.PlaneGeometry(2, 2, 20, 20);
 const mat = new THREE.ShaderMaterial({
   uniforms,
   vertexShader,
@@ -75,7 +75,7 @@ scene.add(mesh);
 /* ─── Energy rings (subtle, atmospheric) ──────────────────────────── */
 
 function makeRing(inner, outer, color, baseOpacity, spinDir) {
-  const g = new THREE.RingGeometry(inner, outer, 64);
+  const g = new THREE.RingGeometry(inner, outer, 32);
   const m = new THREE.MeshBasicMaterial({
     color,
     transparent: true,
@@ -96,9 +96,9 @@ const ring3 = makeRing(0.50, 0.56, '#d4b88c', 0.02,  0.22);
 
 /* ─── Renderer (fixed, behind all content) ────────────────────────── */
 
-const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
 renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1));
 const canvas = renderer.domElement;
 canvas.style.cssText = 'position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;display:block;';
 document.body.prepend(canvas);
@@ -108,6 +108,7 @@ document.body.classList.add('has-shader-bg');
 
 function animate() {
   requestAnimationFrame(animate);
+  if (document.hidden) return;
   uniforms.time.value += 0.008;
   uniforms.intensity.value = 1.0 + Math.sin(uniforms.time.value * 1.8) * 0.2;
 
