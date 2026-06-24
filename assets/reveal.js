@@ -69,7 +69,6 @@
     cursorState = {
       mx: -200, my: -200,
       rx: -200, ry: -200, vx: 0, vy: 0,
-      sx: -200, sy: -200, svx: 0, svy: 0,
       s: 1, sv: 0, hov: false,
       idleT: 0
     };
@@ -83,17 +82,10 @@
 
     function tickCursor() {
       var c = cursorState;
-      // Primary spring
       var dx = c.mx - c.rx, dy = c.my - c.ry;
-      c.vx = (c.vx + dx * 0.072) * 0.68;
-      c.vy = (c.vy + dy * 0.072) * 0.68;
+      c.vx = (c.vx + dx * 0.12) * 0.72;
+      c.vy = (c.vy + dy * 0.12) * 0.72;
       c.rx += c.vx; c.ry += c.vy;
-
-      // Secondary spring
-      var sdx = c.rx - c.sx, sdy = c.ry - c.sy;
-      c.svx = (c.svx + sdx * 0.028) * 0.64;
-      c.svy = (c.svy + sdy * 0.028) * 0.64;
-      c.sx += c.svx; c.sy += c.svy;
 
       // Scale spring
       var ht = c.hov ? 1.18 : 1;
@@ -105,7 +97,7 @@
       var drift = Math.sin(c.idleT * 0.6) * 0.4;
 
       ring.className = 'cursor-ring' + (c.hov ? ' is-hover' : '');
-      ring.style.transform = 'translate(' + (c.sx + drift) + 'px,' + (c.sy + drift * 0.7) + 'px) scale(' + c.s + ')';
+      ring.style.transform = 'translate(' + (c.rx + drift) + 'px,' + (c.ry + drift * 0.7) + 'px) scale(' + c.s + ')';
     }
     addAnim(tickCursor);
     // Force 0.5s idle before first tick to avoid initial flash
