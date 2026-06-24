@@ -253,14 +253,16 @@
   var frames = document.querySelectorAll('.image-strip .frame');
   if (frames.length && !reduced) {
     frames.forEach(function (frame) {
+      var r = null;
       frame.classList.add('magnetic');
+      frame.addEventListener('mouseenter', function () { r = frame.getBoundingClientRect(); });
       frame.addEventListener('mousemove', function (e) {
-        var r = frame.getBoundingClientRect();
+        if (!r) return;
         var px = (e.clientX - r.left) / r.width - 0.5;
         var py = (e.clientY - r.top) / r.height - 0.5;
         frame.style.transform = 'perspective(600px) rotateX(' + (-py * 6) + 'deg) rotateY(' + (px * 6) + 'deg) scale(1.03)';
       });
-      frame.addEventListener('mouseleave', function () { frame.style.transform = ''; });
+      frame.addEventListener('mouseleave', function () { frame.style.transform = ''; r = null; });
     });
   }
 
@@ -268,14 +270,16 @@
   var magnetics = document.querySelectorAll('.btn, .cta-btn, .chip');
   if (magnetics.length && !reduced) {
     magnetics.forEach(function (el) {
+      var r = null;
       el.classList.add('magnetic');
+      el.addEventListener('mouseenter', function () { r = el.getBoundingClientRect(); });
       el.addEventListener('mousemove', function (e) {
-        var r = el.getBoundingClientRect();
+        if (!r) return;
         var px = (e.clientX - r.left) / r.width - 0.5;
         var py = (e.clientY - r.top) / r.height - 0.5;
         el.style.transform = 'translate(' + (px * 4) + 'px,' + (py * 4) + 'px) scale(1.03)';
       });
-      el.addEventListener('mouseleave', function () { el.style.transform = ''; });
+      el.addEventListener('mouseleave', function () { el.style.transform = ''; r = null; });
     });
   }
 

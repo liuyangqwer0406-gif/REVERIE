@@ -78,8 +78,6 @@ a, button, .craft-card, .world-row, .frame, .chip, .btn, .portrait, .magnetic,
   pointer-events: none;
   z-index: 99998;
   will-change: transform;
-  backdrop-filter: blur(1px);
-  -webkit-backdrop-filter: blur(1px);
 }
 .cursor-ring.is-hover {
   border-color: rgba(197,164,114,0.75);
@@ -238,7 +236,6 @@ h2.display { font-size: clamp(36px, 4.5vw, 64px); margin-bottom: 24px; }
   transition-delay: calc(var(--row-i, 0) * 0.07s);
   opacity: 0;
   transform: translateY(30px);
-  will-change: transform, opacity;
 }
 .world-row.in-view { opacity: 1; transform: translateY(0); }
 .world-row.is-hidden {
@@ -453,7 +450,7 @@ h2.display { font-size: clamp(36px, 4.5vw, 64px); margin-bottom: 24px; }
   min-height: 640px;
   margin: -140px -48px 0;
   background: var(--hero-bg) center/cover no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
   display: flex;
   align-items: flex-end;
   padding: 48px;
@@ -554,7 +551,7 @@ h2.display { font-size: clamp(36px, 4.5vw, 64px); margin-bottom: 24px; }
   height: 1px;
   background: var(--gold);
   pointer-events: none; z-index: 1;
-  will-change: transform, width, opacity;
+  will-change: transform, opacity;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -796,9 +793,6 @@ body::after {
 }
 
 /* ── Enhanced hero parallax container ────────────────────────────────────── */
-.world-hero {
-  will-change: background-position;
-}
 /* ── Hero entrance (world detail pages) ──────────────────────────────── */
 .world-hero-title { animation: none; } /* inherits from .page-hero-title via world detail heroRise */
 

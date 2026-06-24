@@ -4,6 +4,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>REVERIE — 流动式实验艺术机构 / Nomadic Experiential Art Institution</title>
+  <link rel="preconnect" href="https://plugin-assets.open-design.ai">
+  <link rel="preload" href="assets/glendora.regular.otf" as="font" type="font/otf" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Imprima&family=Noto+Sans+SC:wght@300;400&family=Noto+Serif+SC:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
@@ -131,21 +133,6 @@
     .card-title-en { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 9px; letter-spacing: 0.24em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
     a.hero-card { text-decoration: none; transition: transform 0.4s cubic-bezier(0.22,1,0.36,1); cursor: pointer; display: block; }
     a.hero-card:hover { transform: translateY(-3px); }
-    a.hero-card:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 4px;
-      border-radius: 30px;
-    }
-    a.hero-card:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 4px;
-      border-radius: 30px;
-    }
-    a.hero-card:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 4px;
-      border-radius: 30px;
-    }
     a.hero-card:focus-visible {
       outline: 2px solid var(--gold);
       outline-offset: 4px;
@@ -426,14 +413,15 @@
 
     // ── Scroll progress (passive listener) ──
     var scrollProgress = 0;
+    var scrollRootH = 0;
+    function cacheRootH() { scrollRootH = document.getElementById('scroll-root').offsetHeight; }
     function readScroll() {
-      var root = document.getElementById('scroll-root');
-      var scrollable = root.offsetHeight - window.innerHeight;
+      var scrollable = scrollRootH - window.innerHeight;
       scrollProgress = scrollable > 0 ? clamp(window.scrollY / scrollable, 0, 1) : 0;
     }
     window.addEventListener('scroll', readScroll, { passive: true });
-    window.addEventListener('resize', readScroll);
-    readScroll();
+    window.addEventListener('resize', function () { cacheRootH(); readScroll(); });
+    cacheRootH(); readScroll();
 
     // ── Smooth mouse tracking ──
     var targetRX = 0, targetRY = 0, curRX = 0, curRY = 0;
