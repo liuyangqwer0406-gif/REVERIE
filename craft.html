@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>匠心 Craft — REVERIE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Imprima&family=Noto+Sans+SC:wght@300;400&family=Noto+Serif+SC:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js"
+    }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-group essential">
+      <a href="worlds.html">世界 Worlds</a>
+      <a href="atelier.html">工坊 Atelier</a>
+      <a href="immersions.html">沉浸 Immersions</a>
+    </div>
+    <a href="index.html" class="logo" aria-label="REVERIE 首页">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="M15 3l2.2 6.6h7l-5.7 4 2.2 6.6L15 16.5l-5.7 3.7 2.2-6.6-5.7-4h7L15 3z" fill="#fff" opacity="0.95"/>
+      </svg>
+    </a>
+    <div class="nav-group">
+      <a href="craft.html" class="is-current">匠心 Craft</a>
+      <a href="codex.html">典籍 Codex</a>
+      <a href="connect.html">联络 Connect</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section style="position:relative; margin:-140px -48px 48px; padding:200px 48px 80px; background:#1a1310 center/cover no-repeat; background-image:url('assets/scenes/craft-weaver.png'); overflow:hidden;">
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,6,8,0.78) 0%, rgba(10,6,8,0.55) 40%, rgba(10,6,8,0.95) 100%);"></div>
+      <div style="position:relative; max-width:960px; margin:0 auto;">
+        <span class="eyebrow">THE COLLABORATORS</span>
+        <h1 class="display page-hero-title" style="font-size:clamp(48px,7vw,96px); margin-bottom:12px;">匠心 · Craft</h1>
+        <p class="page-hero-sub" style="font-family:'Glendora à','Viaoda Libre',serif; font-style:italic; font-size:clamp(20px,2.5vw,34px); color:rgba(255,255,255,0.72); letter-spacing:0.04em; margin-bottom:28px;">Behind every work is a craftsperson — 每件作品背后都有一个人的手艺</p>
+        <p class="page-hero-desc" style="font-family:'Noto Serif SC',serif; font-size:clamp(14px,1.2vw,17px); max-width:64ch; color:rgba(255,255,255,0.82); line-height:1.85;">他们是我们信任的合作者，也是我们在荒野里唯一依赖的人。Behind every work is a craftsperson — our trusted collaborators, the only people we rely on in the wild.</p>
+      </div>
+    </section>
+
+    <div class="craft-grid">
+      <!-- 1 · 铜匠 · Franz H. — 巴伐利亚 · 空之合唱 -->
+      <div class="craft-card" style="opacity:0; transform:translateY(24px);">
+        <div class="portrait" style="background-image:url('assets/scenes/hollow-choir-ring.png');"></div>
+        <div>
+          <div class="bio-title">铜匠 · Franz H.</div>
+          <div class="bio-en-title">Franz H. — Bavaria</div>
+          <div class="bio-world">对应 World · I · 空之合唱</div>
+          <div class="bio-zh">Franz 是雷根镇上最后一位还用手工切削铜管的匠人。我们的三十二支管风琴管由他一人完成，每一支都经过他手中的锉刀和耳朵校对。他说铜不是敲出来的，是听出来的。
+          <div class="bio-zh" style="margin-top:10px;">他的工坊里没有任何电子设备。他校准管子用的是一只音叉和窗外那条河的流水声。他说河水的白噪音频率是恒定的——低于任何人耳能分辨的范围，但铜可以感受到。四个月里他每天只切削六小时，因为他说手有它自己的疲劳周期，过了六小时耳朵就不准了。</div></div>
+          <div class="bio-en">Franz is the last craftsman in Regen who still cuts copper pipe by hand. All thirty-two pipes were his alone, each tuned by file and ear. He says copper is not shaped by striking — it is shaped by listening.
+          <div class="bio-en" style="margin-top:10px;">His workshop has no electronic instruments. He tunes using a single tuning fork and the sound of the river outside his window — a white-noise frequency below human hearing but sensible to copper, he says. He works only six hours a day because the hand tires and the ear loses precision after that.</div></div>
+        </div>
+      </div>
+
+      <!-- 2 · 矿物颜料师 · Elin Ø. — 法罗群岛 · 潮汐图谱 -->
+      <div class="craft-card" style="opacity:0; transform:translateY(24px);">
+        <div class="portrait" style="background-image:url('assets/scenes/tide-atlas-mural.png');"></div>
+        <div>
+          <div class="bio-title">矿物颜料师 · Elin Ø.</div>
+          <div class="bio-en-title">Elin Ø. — Faroe Islands</div>
+          <div class="bio-world">对应 World · II · 潮汐图谱</div>
+          <div class="bio-zh">Elin 花了三年时间在法罗群岛的海岸线上收集矿物和藻类，调配出能在盐水中持久的天然颜料。她的配方至今没有被复制——她说法罗群岛的水本身也是配方的一部分。
+          <div class="bio-zh" style="margin-top:10px;">她每天早上退潮时去海岸收集材料，每种藻类和矿物的采集窗口只有三到四周。她不说自己在"做颜料"——她说自己是在"追季节"。错过一个月，就要等一年。</div></div>
+          <div class="bio-en">Elin spent three years collecting minerals and algae along the Faroese coast to formulate a natural pigment that endures saltwater. Her recipe has never been replicated — she says the water of the Faroe Islands is part of the formula.
+          <div class="bio-en" style="margin-top:10px;">She collects her materials at low tide each morning, each species of algae and mineral available for only three to four weeks. She does not say she "makes pigment" — she says she "chases the season." Miss a month, wait a year.</div></div>
+        </div>
+      </div>
+
+      <!-- 3 · 盐漠向导 · Mateo C. — 阿塔卡马 · 盐之颂歌 -->
+      <div class="craft-card" style="opacity:0; transform:translateY(24px);">
+        <div class="portrait" style="background-image:url('assets/scenes/salt-oratorio-mine.png');"></div>
+        <div>
+          <div class="bio-title">盐漠向导 · Mateo C.</div>
+          <div class="bio-en-title">Mateo C. — Atacama Desert</div>
+          <div class="bio-world">对应 World · III · 盐之颂歌</div>
+          <div class="bio-zh">Mateo 在阿塔卡马盐漠生活了四十年。他不是地质学家，但他能用脚掌分辨盐壳的厚度——每一段盐漠的脚步声都不一样：薄的盐壳踩下去是脆响，厚的是闷响，有空洞的地方会发出鼓一样的震动。他带我们走了七天，用一根木棍一路敲打地面，直到找到一片盐层厚度均匀、敲击声在三公里外仍清晰可辨的区域。
+          <div class="bio-zh" style="margin-top:10px;">演出那三夜他坐在最远处，面朝矿坑的方向。他说他不是来听的——他是来确认盐层没有塌陷的。干盐在低温下会收缩开裂，如果他听到不正常的断裂声，他会站起来示意停止。三夜什么都没有发生。他最后说："盐知道该怎么做。"</div></div>
+          <div class="bio-en">Mateo has lived in the Atacama salt flats for forty years. He is not a geologist, but he can read the salt crust's thickness through his footsteps — thin salt cracks underfoot, thick salt gives a dull thud, hollow pockets resonate like a drum. He walked us for seven days, tapping the ground with a wooden stick until he found a section where the salt layer was uniformly thick and the sound of a strike carried clearly for three kilometres.
+          <div class="bio-en" style="margin-top:10px;">The three nights of the performance, he sat at the farthest edge, facing the mine. He said he was not there to listen — he was there to make sure the salt crust did not collapse. Dry salt contracts and cracks in low temperatures; if he heard an abnormal fracture, he would stand up and signal a halt. Nothing happened across all three nights. In the end he said: "The salt knows what to do."</div></div>
+        </div>
+      </div>
+
+      <!-- 4 · 声学工程师 · Dr. Kenji T. — 北海道 · 枭时 -->
+      <div class="craft-card" style="opacity:0; transform:translateY(24px);">
+        <div class="portrait" style="background-image:url('assets/scenes/owl-hours-spectrogram.png');"></div>
+        <div>
+          <div class="bio-title">声学工程师 · Dr. Kenji T.</div>
+          <div class="bio-en-title">Dr. Kenji T. — Hokkaido</div>
+          <div class="bio-world">对应 World · IV · 枭时</div>
+          <div class="bio-zh">Kenji 是京都大学的生物声学学者，专门研究林冠层残响。他在八夜中用自制的声谱仪记录了每一声渔鸮鸣叫，以及每一次人声回应的间隙时长。这些声谱后来成为每位 Patron 离场时唯一的纪念物。
+          <div class="bio-zh" style="margin-top:10px;">他后来在研究论文的脚注里写了一句不属于任何数据的话："第二夜凌晨三点十七分，有大约四十秒时间，我无法分辨哪一声是鸟、哪一声是人。"那是整份论文里他唯一没有用脚注编号标注的一句话。</div></div>
+          <div class="bio-en">Kenji is a bioacoustic researcher from Kyoto University specializing in canopy reverberation. Over eight nights he recorded every fish-owl call with a custom spectrograph, timing the gaps before each human response. Those spectrograms became the only souvenir each Patron took home.
+          <div class="bio-en" style="margin-top:10px;">Later, buried in a footnote of his research paper, he wrote a line that belonged to no dataset: "At 3:17 on the second night, for roughly forty seconds, I could not tell which sound was the bird and which was the human." It was the only sentence in the entire paper he did not number.</div></div>
+        </div>
+      </div>
+
+      <!-- 5 · 羊毛染色师 · Marisol V. — 比利牛斯 · 织梦 -->
+      <div class="craft-card" style="opacity:0; transform:translateY(24px);">
+        <div class="portrait" style="background-image:url('assets/scenes/the-loom-weave.png');"></div>
+        <div>
+          <div class="bio-title">羊毛染色师 · Marisol V.</div>
+          <div class="bio-en-title">Marisol V. — Pyrenees</div>
+          <div class="bio-world">对应 World · V · 织梦</div>
+          <div class="bio-zh">Marisol 是比利牛斯山区最后一位用天然植物染色的羊毛工艺师。她的色彩来自石场周边采的野花和树皮——灰白来自灰毛柳，深褐来自胡桃根，焦黑来自烧过的石楠。她说最好的颜色不是配出来的，是找出来的。
+          <div class="bio-zh" style="margin-top:10px;">她从不使用同一种植物两次——因为每一批花的颜色都不一样，取决于那年下了多少雨、羊啃过那块地没有、风从哪个方向吹来。"如果你想要一模一样的颜色，"她说，"你走错了地方。"</div></div>
+          <div class="bio-en">Marisol is the last wool dyer in the Pyrenees who works exclusively with natural plants. Her colours come from wildflowers and bark gathered around the quarry — ash-white from grey willow, deep brown from walnut root, scorched black from burnt heather. She says the best colours are not mixed — they are found.
+          <div class="bio-en" style="margin-top:10px;">She never uses the same plant twice — each batch of flowers differs depending on how much rain fell that year, whether goats grazed that patch, which direction the wind blew. "If you want the exact same colour," she says, "you have come to the wrong place."</div></div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="image-strip" style="margin-top:64px;">
+      <div class="frame" style="background-image:url('assets/scenes/craft-weaver.png')"></div>
+      <div class="frame" style="background-image:url('assets/scenes/tide-atlas-mural.png')"></div>
+      <div class="frame" style="background-image:url('assets/scenes/the-loom-weave.png')"></div>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <span>© REVERIE · CRAFT</span>
+  </footer>
+
+  <script src="assets/reveal.js"></script>
+  <script type="module" src="assets/background-shader.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "world-tide-atlas.html",
+  "entry": "world-tide-atlas.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-22T15:30:54.012Z",
+  "updatedAt": "2026-06-22T15:30:54.012Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

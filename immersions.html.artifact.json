@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "immersions.html",
+  "entry": "immersions.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-23T02:52:21.644Z",
+  "updatedAt": "2026-06-23T02:52:21.644Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

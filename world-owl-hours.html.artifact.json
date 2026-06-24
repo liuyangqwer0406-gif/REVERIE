@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "world-owl-hours.html",
+  "entry": "world-owl-hours.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-22T15:31:52.414Z",
+  "updatedAt": "2026-06-22T15:31:52.414Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

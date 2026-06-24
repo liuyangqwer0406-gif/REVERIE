@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>工坊 Atelier — REVERIE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Imprima&family=Noto+Sans+SC:wght@300;400&family=Noto+Serif+SC:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js"
+    }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-group essential">
+      <a href="worlds.html">世界 Worlds</a>
+      <a href="#" class="is-current">工坊 Atelier</a>
+      <a href="immersions.html">沉浸 Immersions</a>
+    </div>
+    <a href="index.html" class="logo" aria-label="REVERIE 首页">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="M15 3l2.2 6.6h7l-5.7 4 2.2 6.6L15 16.5l-5.7 3.7 2.2-6.6-5.7-4h7L15 3z" fill="#fff" opacity="0.95"/>
+      </svg>
+    </a>
+    <div class="nav-group">
+      <a href="craft.html">匠心 Craft</a>
+      <a href="codex.html">典籍 Codex</a>
+      <a href="connect.html">联络 Connect</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section style="position:relative; margin:-140px -48px 48px; padding:200px 48px 80px; background:#1a1310 center/cover no-repeat; background-image:url('assets/scenes/atelier-workshop.png'); overflow:hidden;">
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,6,8,0.78) 0%, rgba(10,6,8,0.55) 40%, rgba(10,6,8,0.95) 100%);"></div>
+      <div style="position:relative; max-width:960px; margin:0 auto;">
+        <span class="eyebrow">THE ARTISANS</span>
+        <h1 class="display page-hero-title" style="font-size:clamp(48px,7vw,96px); margin-bottom:12px;">工坊 · Atelier</h1>
+        <p class="page-hero-sub" style="font-family:'Glendora à','Viaoda Libre',serif; font-style:italic; font-size:clamp(20px,2.5vw,34px); color:rgba(255,255,255,0.72); letter-spacing:0.04em; margin-bottom:28px;">Behind the Worlds — 让每件作品发生的人</p>
+        <p class="page-hero-desc" style="font-family:'Noto Serif SC',serif; font-size:clamp(14px,1.2vw,17px); max-width:56ch; color:rgba(255,255,255,0.82); line-height:1.85;">每一个 World 的背后都有一个人用双手让不可能成为可能。以下是驻地的工艺人，有些还在继续与我们合作，有些只合作过那一次。</p>
+      </div>
+    </section>
+
+    <div class="craft-grid">
+      <!-- 1 · 巴伐利亚铜匠 -->
+      <div class="craft-card" style="opacity:0; transform:translateY(24px);">
+        <div class="portrait" style="background-image:url('assets/scenes/hollow-choir-ring.png');"></div>
+        <div>
+          <div class="bio-title">巴伐利亚铜匠</div>
+          <div class="bio-en-title">Bavarian Coppersmith</div>
+          <div class="bio-world">地点 · Regen, Bavaria &nbsp;│&nbsp; 对应 World · I · 空之合唱</div>
+          <div class="bio-zh">用四个月时间手工切削三十二支铜管。每一支都有自己的基音，自己的脾气。铜匠本人从未到过森林现场——他把管子交给我们的那天只说了一句："它们会唱歌的。"
+          <div class="bio-zh" style="margin-top:10px;">事后我们才知道，他在切削每支管子的最后几天里会停止所有工作，每天日出时去敲一下正在做的管子，听听当天的温度变了多少。他说铜管的音高会随着季节变化——冬天降了半个音，夏天又回来。那不是误差，那是金属在呼吸。</div></div>
+          <div class="bio-en">Four months hand-cutting thirty-two copper pipes. Each with its own fundamental, its own temperament. The smith never visited the forest — the day he handed us the pipes he said simply: "They will sing."
+          <div class="bio-en" style="margin-top:10px;">Only later we learned: in the final days of each pipe, he stopped all other work and went to strike it at dawn, listening for how much the day’s temperature had shifted. The pitch drops half a tone in winter and returns in summer, he said. That is not drift — that is metal breathing.</div></div>
+        </div>
+      </div>
+
+      <!-- 2 · 法罗群岛艺术家 -->
+      <div class="craft-card" style="opacity:0; transform:translateY(24px);">
+        <div class="portrait" style="background-image:url('assets/scenes/tide-atlas-mural.png');"></div>
+        <div>
+          <div class="bio-title">法罗群岛艺术家</div>
+          <div class="bio-en-title">Faroese Artist</div>
+          <div class="bio-world">地点 · Vágar, Faroe Islands &nbsp;│&nbsp; 对应 World · II · 潮汐图谱</div>
+          <div class="bio-zh">用三年时间测试矿物颜料在盐水中的稳定性。配方最终用当地海藻灰、玄武岩粉和绵羊脂固定。她说海水不是问题——问题是人类的目光。
+          <div class="bio-zh" style="margin-top:10px;">她有一次站在悬崖上指着海面说："你看那片水的颜色——它下午四点才会出现，只持续十七分钟。如果我想用颜料留住它，必须在那个时刻开始调。等我调好，那片水已经变回深蓝了。"她的颜料从来不是为了复制自然——她说只是为了让自己记住，在它消逝之前，它长什么样。</div></div>
+          <div class="bio-en">Three years testing mineral pigments in saltwater. The final binder uses local seaweed ash, basalt dust, and sheep tallow. She says the sea is not the problem — the human gaze is.
+          <div class="bio-en" style="margin-top:10px;">Once, standing on a cliff, she pointed at the sea: "See that colour on the water — it only appears at four in the afternoon, for seventeen minutes. If I want to capture it in pigment, I must start mixing at that exact moment. By the time I've mixed it, the water has already turned back to deep blue." Her pigments have never been about replicating nature — she says they are only to remind herself what it looked like before it slipped away.</div></div>
+        </div>
+      </div>
+
+      <!-- 3 · 阿塔卡马石匠 -->
+      <div class="craft-card" style="opacity:0; transform:translateY(24px);">
+        <div class="portrait" style="background-image:url('assets/scenes/salt-oratorio-stone.png');"></div>
+        <div>
+          <div class="bio-title">阿塔卡马石匠</div>
+          <div class="bio-en-title">Atacama Stone Carver</div>
+          <div class="bio-world">地点 · San Pedro de Atacama, Chile &nbsp;│&nbsp; 对应 World · III · 盐之颂歌</div>
+          <div class="bio-zh">从盐矿深处开采整块岩盐，手工切削成可击响的石琴。每一块石琴的裂纹纹理决定了它的音高——他不调音，他顺着石头本来的声音走。
+          <div class="bio-zh" style="margin-top:10px;">他说盐矿深处的声音和地面上的不一样——矿壁会吸收高频，留下的是干燥的低沉声。他在矿下工作了三十七年，已不再需要用耳朵去听石头的音高——他说他能通过手掌感觉到。</div></div>
+          <div class="bio-en">He quarries solid rock salt from deep in the mine and hand-carves it into stone instruments. The fracture pattern of each slab determines its pitch — he does not tune, he follows the stone's own voice.</div>
+        </div>
+      </div>
+
+      <!-- 4 · 北海道演奏者 -->
+      <div class="craft-card" style="opacity:0; transform:translateY(24px);">
+        <div class="portrait" style="background-image:url('assets/scenes/owl-hours-patrons.png');"></div>
+        <div>
+          <div class="bio-title">北海道演奏者</div>
+          <div class="bio-en-title">Hokkaido Performer</div>
+          <div class="bio-world">地点 · Hokkaido, Japan &nbsp;│&nbsp; 对应 World · IV · 枭时</div>
+          <div class="bio-zh">七位演奏者之一。他是一位能模仿十七种北海道鸟类叫声的声乐家。八夜之中他只回应过毛腿渔鸮两次——那天凌晨他说："它今晚不想说话。"
+          <div class="bio-zh" style="margin-top:10px;">第一夜他没有发出任何声音。他坐在林间的木桩上听了一整夜，只在凌晨离去时说了一句："它在听我。"之后的六夜他逐渐找到渔鸮的节奏，发现这种鸟不会连续回应同一个人类超过三次。第三响之后他会停下来，等它先走。第二天再来。第八夜他只发出了一声——然后那声鸟鸣在树林里重复了三次。</div></div>
+          <div class="bio-en">One of seven performers. A vocalist who can mimic seventeen Hokkaido bird calls. Over eight nights he answered the fish-owl only twice — at dawn he said: "It did not wish to speak tonight."
+          <div class="bio-en" style="margin-top:10px;">The first night he made no sound at all. He sat on a stump and listened all night, only speaking at dawn: "It is listening to me." Over the next six nights he gradually found the rhythm of the fish-owl, discovering that this bird never responds to the same human more than three times in a row. After the third response he would stop, wait for the owl to leave first, then try again the next night. On the eighth night he made only one call — and that call echoed three times through the forest.</div></div>
+        </div>
+      </div>
+
+      <!-- 5 · 比利牛斯织工 -->
+      <div class="craft-card" style="opacity:0; transform:translateY(24px);">
+        <div class="portrait" style="background-image:url('assets/scenes/the-loom-weave.png');"></div>
+        <div>
+          <div class="bio-title">比利牛斯织工</div>
+          <div class="bio-en-title">Pyrenean Weaver</div>
+          <div class="bio-world">地点 · Pyrenees, Spain &nbsp;│&nbsp; 对应 World · V · 织梦</div>
+          <div class="bio-zh">用传统比利牛斯羊毛手工编织三百米织物，不使用机器、不使用化学染料。每月推进约十米。她说她不是在织布——她在量时间。
+          <div class="bio-zh" style="margin-top:10px;">完工那晚她没有来。她说她不想看到它烧掉。我们知道她坐在山谷对面的牧羊人小屋里，面朝石场的方向。火光持续了大约四十分钟。第二天早上她回来，从灰烬中捡起一小块没有烧尽的羊毛碎片——那上面还能看出织纹。她说："够了。这一小块就够了。"</div></div>
+          <div class="bio-en">Hand-weaves three hundred metres of textile using traditional Pyrenean wool, no machinery, no chemical dyes. Advancing roughly ten metres per month. She says she is not weaving cloth — she is measuring time.
+          <div class="bio-en" style="margin-top:10px;">The night it was finished, she did not come. She said she did not want to watch it burn. We knew she was sitting in the shepherd's hut across the valley, facing the quarry. The fire lasted perhaps forty minutes. She returned the next morning and picked a small unburned fragment from the ashes — the weave pattern was still visible. "Enough," she said. "This small piece is enough."</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="image-strip" style="margin-top:64px;">
+      <div class="frame" style="background-image:url('assets/scenes/atelier-workshop.png')"></div>
+      <div class="frame" style="background-image:url('assets/scenes/hollow-choir-ring.png')"></div>
+      <div class="frame" style="background-image:url('assets/scenes/the-loom-weave.png')"></div>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <span>&copy; REVERIE · ATELIER</span>
+    <span><a href="connect.html">申请入会 / Apply</a></span>
+  </footer>
+
+  <script src="assets/reveal.js"></script>
+  <script type="module" src="assets/background-shader.js"></script>
+</body>
+</html>

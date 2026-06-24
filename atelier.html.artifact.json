@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "atelier.html",
+  "entry": "atelier.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-23T02:50:07.173Z",
+  "updatedAt": "2026-06-23T02:50:07.173Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

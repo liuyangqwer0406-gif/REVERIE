@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "world-the-loom.html",
+  "entry": "world-the-loom.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-22T15:27:34.351Z",
+  "updatedAt": "2026-06-22T15:27:34.351Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

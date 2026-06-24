@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>沉浸 Immersions — REVERIE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Imprima&family=Noto+Sans+SC:wght@300;400&family=Noto+Serif+SC:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js"
+    }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-group essential">
+      <a href="worlds.html">世界 Worlds</a>
+      <a href="atelier.html">工坊 Atelier</a>
+      <a href="#" class="is-current">沉浸 Immersions</a>
+    </div>
+    <a href="index.html" class="logo" aria-label="REVERIE 首页">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="M15 3l2.2 6.6h7l-5.7 4 2.2 6.6L15 16.5l-5.7 3.7 2.2-6.6-5.7-4h7L15 3z" fill="#fff" opacity="0.95"/>
+      </svg>
+    </a>
+    <div class="nav-group">
+      <a href="craft.html">匠心 Craft</a>
+      <a href="codex.html">典籍 Codex</a>
+      <a href="connect.html">联络 Connect</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section style="position:relative; margin:-140px -48px 48px; padding:200px 48px 80px; background:#1a1310 center/cover no-repeat; background-image:url('assets/scenes/immersions-hero.png'); overflow:hidden;">
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,6,8,0.78) 0%, rgba(10,6,8,0.55) 40%, rgba(10,6,8,0.95) 100%);"></div>
+      <div style="position:relative; max-width:960px; margin:0 auto;">
+        <span class="eyebrow">THE PATRON'S WAY</span>
+        <h1 class="display page-hero-title" style="font-size:clamp(48px,7vw,96px); margin-bottom:16px;">沉浸 · Immersions</h1>
+        <p class="page-hero-desc" style="font-family:'Noto Serif SC',serif; font-size:clamp(14px,1.2vw,17px); max-width:64ch; color:rgba(255,255,255,0.86); line-height:1.85; margin-bottom:0;">每一件 REVERIE 作品的体验不仅属于作品本身，也属于到达与离开的方式。以下是 Patrons 在每一次 World 现场经历的基本流程。</p>
+        <p style="font-family:'Imprima',sans-serif; font-style:italic; font-size:clamp(13px,1vw,15px); color:rgba(255,255,255,0.55); margin-top:10px; margin-bottom:0;">Each REVERIE work is defined not only by itself but by how one arrives and departs. Here is the arc every Patron follows.</p>
+      </div>
+    </section>
+
+    <section class="world-body">
+      <aside>
+        <div class="group">
+          <span class="label">类型 · Type</span>
+          <span class="value">体验框架<br>Experience Framework</span>
+        </div>
+        <div class="group">
+          <span class="label">领域 · Domain</span>
+          <span class="value">Patron Journey</span>
+        </div>
+        <div class="group">
+          <span class="label">语言 · Language</span>
+          <span class="value">中英双语</span>
+        </div>
+        <div class="group">
+          <span class="label">原则 · Principle</span>
+          <span class="value">沉默 · Silence</span>
+        </div>
+        <div class="group">
+          <span class="label">阶段 · Stages</span>
+          <span class="value">4</span>
+        </div>
+      </aside>
+
+      <div>
+        <!-- I · 前夜 · The Eve -->
+        <section class="essay-section">
+          <h3>I · 前夜 · The Eve</h3>
+          <div class="bi">
+            <div class="zh">
+              <p>Patrons 在 World 开场前一晚抵达最近的城镇或营地。没有作品介绍，没有行程表，只有一封手写信，告知次日集合的时间和地点。信末总是一句话："你可以不来。"</p>
+            </div>
+            <div class="en">
+              <p>Patrons arrive at the nearest town or camp the evening before a World opens. No introduction to the work, no itinerary — only a hand-written letter with the next day's meeting time and place. It always ends: "You may choose not to come."</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- II · 入场 · The Entry -->
+        <section class="essay-section">
+          <h3>II · 入场 · The Entry</h3>
+          <div class="bi">
+            <div class="zh">
+              <p>次日清晨或傍晚，向导在指定地点集合。Patrons 被要求交出手机和相机，装入布袋，由向导统一保管。之后开始步行或乘船进入场地——这段距离从二十分钟到两小时不等，全程沉默。</p>
+            </div>
+            <div class="en">
+              <p>At dawn or dusk, the guide gathers everyone at the appointed place. Patrons surrender phones and cameras, which are bagged and held by the guide. Then begins the walk or boat ride into the site — twenty minutes to two hours, in silence.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- III · 在场 · The Presence -->
+        <section class="essay-section">
+          <h3>III · 在场 · The Presence</h3>
+          <div class="bi">
+            <div class="zh">
+              <p>作品本身的时间从十分钟到三小时不等。没有讲解、没有节目单、没有互动的义务。可以坐、可以站、可以走、可以躺。唯一的要求是保持安静。</p>
+            </div>
+            <div class="en">
+              <p>The work itself lasts anywhere from ten minutes to three hours. No narration, no programme, no obligation to interact. Sit, stand, walk, lie down. The only requirement is silence.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- IV · 离场 · The Leaving -->
+        <section class="essay-section">
+          <h3>IV · 离场 · The Leaving</h3>
+          <div class="bi">
+            <div class="zh">
+              <p>离开时 Patrons 取回自己的物品。没有问卷调查、没有反馈表。每人获得一件随身之物——一块石头、一页手稿、一片盐的碎片——随他们带走或留下。沉默一直保持到回到城镇为止。</p>
+            </div>
+            <div class="en">
+              <p>On departure, Patrons retrieve their belongings. No questionnaire, no feedback form. Each receives a small object — a stone, a manuscript page, a chip of salt — to keep or leave. Silence holds until town.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Image strip -->
+        <div class="image-strip">
+          <div class="frame" style="background-image:url('assets/scenes/immersions-gathering.png')"></div>
+          <div class="frame" style="background-image:url('assets/scenes/hollow-choir-forest.png')"></div>
+          <div class="frame" style="background-image:url('assets/scenes/tide-atlas-boat.png')"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <span>&copy; REVERIE · IMMERSIONS</span>
+    <span><a href="connect.html">申请入会 / Apply</a></span>
+  </footer>
+
+  <script src="assets/reveal.js"></script>
+  <script type="module" src="assets/background-shader.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "craft.html",
+  "entry": "craft.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-23T02:54:16.401Z",
+  "updatedAt": "2026-06-23T02:54:16.401Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}

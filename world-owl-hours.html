@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>IV · 枭时 Owl Hours — REVERIE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Imprima&family=Noto+Sans+SC:wght@300;400&family=Noto+Serif+SC:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js"
+    }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-group essential">
+      <a href="worlds.html" class="is-current">世界 Worlds</a>
+      <a href="atelier.html">工坊 Atelier</a>
+      <a href="immersions.html">沉浸 Immersions</a>
+    </div>
+    <a href="index.html" class="logo" aria-label="REVERIE 首页">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="M15 3l2.2 6.6h7l-5.7 4 2.2 6.6L15 16.5l-5.7 3.7 2.2-6.6-5.7-4h7L15 3z" fill="#fff" opacity="0.95"/>
+      </svg>
+    </a>
+    <div class="nav-group">
+      <a href="craft.html">匠心 Craft</a>
+      <a href="codex.html">典籍 Codex</a>
+      <a href="connect.html">联络 Connect</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section class="world-hero" style="background-image:url('assets/cards/card-owl-hours-v2.png')">
+      <div class="world-hero-inner">
+        <span class="eyebrow">WORLD IV · 2024 · ARCHIVED</span>
+        <h1 class="display page-hero-title" style="font-size:clamp(52px,8vw,100px); margin-bottom:18px;">枭时</h1>
+        <p class="page-hero-sub" style="font-family:'Glendora à','Viaoda Libre',serif; font-style:italic; font-size:clamp(22px,3vw,42px); color:rgba(255,255,255,0.72); letter-spacing:0.04em; margin-bottom:24px;">Owl Hours</p>
+        <p class="page-hero-desc" style="font-family:'Noto Serif SC',serif; font-size:clamp(15px,1.4vw,18px); max-width:48ch; color:rgba(255,255,255,0.82); line-height:1.85;">北海道原始森林里的毛腿渔鸮发出低沉的叹息，七位演奏者用人声回应，让两种声音在夜空中短暂地相遇。</p>
+      </div>
+    </section>
+
+    <section class="world-body">
+      <aside>
+        <div class="group">
+          <span class="label">地点 · Site</span>
+          <span class="value">Hokkaido<br>Japan</span>
+        </div>
+        <div class="group">
+          <span class="label">时长 · Duration</span>
+          <span class="value">8 夜<br>2024.01</span>
+        </div>
+        <div class="group">
+          <span class="label">媒介 · Medium</span>
+          <span class="value">鸟鸣 · 人声回应<br>原始森林</span>
+        </div>
+        <div class="group">
+          <span class="label">在场 · Attended</span>
+          <span class="value">32 / 32 Patrons</span>
+        </div>
+        <div class="group">
+          <span class="label">现存 · Survives</span>
+          <span class="value">无录音<br>仅一份声谱手稿</span>
+        </div>
+        <div class="group">
+          <span class="label">状态 · Status</span>
+          <span class="value" style="color:var(--mist); font-size:12px; letter-spacing:0.22em; text-transform:uppercase; font-family:var(--mono);">已封存 / CLOSED</span>
+        </div>
+      </aside>
+
+      <div>
+        <section class="essay-section">
+          <h3>I · 构想 · Premise</h3>
+          <div class="bi">
+            <div class="zh">
+              <p>北海道的原始森林里住着全世界最安静的鸟类之一 — 毛腿渔鸮。它的叫声不是歌唱，而是一种低沉的、几乎听不见的叹息。我们不录制它、不模仿它、不训练它 — 我们只是在它出没的林子里，用人声回应它的叹息，让两种声音在夜空中短暂地相遇。</p>
+            </div>
+            <div class="en">
+              <p>Hokkaido's primeval forest is home to one of the world's quietest birds — the Blakiston's fish-owl. Its call is not a song but a low, barely audible sigh. We did not record it, imitate it, or train it — we simply stood in the forest where it lives and answered its sigh with human voice, letting two sounds meet briefly in the night air.</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="image-strip">
+          <div class="frame" style="background-image:url('assets/scenes/owl-hours-patrons.png')"></div>
+          <div class="frame" style="background-image:url('assets/cards/card-owl-hours-v2.png')"></div>
+          <div class="frame" style="background-image:url('assets/scenes/owl-hours-spectrogram.png')"></div>
+        </div>
+
+        <section class="essay-section">
+          <h3>II · 制作 · Making</h3>
+          <div class="bi">
+            <div class="zh">
+              <p>七位演奏者在八夜期间，每夜 23:00 至 04:00 之间进入林子。没有乐谱、没有指挥、没有约定的信号 — 每个人凭自己的耳朵判断毛腿渔鸮是否在叫，然后决定是否回应、用什么音调回应。有些夜里渔鸮不叫，演奏者就沉默地坐到天亮。</p>
+            </div>
+            <div class="en">
+              <p>Seven performers entered the forest each night over eight nights, between 23:00 and 04:00. No score, no conductor, no agreed signals — each judged by ear whether the fish-owl was calling, then decided whether and how to answer. Some nights the owl did not call, and the performers sat in silence until dawn.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="essay-section">
+          <h3>III · 进入 · Entering</h3>
+          <div class="bi">
+            <div class="zh">
+              <p>Patrons 在 22:30 于林边小屋集合，每人获得一件防寒外套和一支红光手电（白光会惊扰渔鸮）。步行 20 分钟进入林深处后熄灯，仅靠星光和雪地反射辨认方向。可以坐、可以躺、可以走动，但必须保持安静。凌晨 04:00 向导用红光信号集合，步行返回。</p>
+            </div>
+            <div class="en">
+              <p>Patrons gathered at the forest-edge cabin at 22:30, each given a cold-weather coat and a red-light torch (white light disturbs the owl). Twenty minutes into the forest, all lights off — navigation by starlight and snow reflection only. Sit, lie down, walk, but remain silent. At 04:00 the guide gathered everyone with a red-light signal and walked them back.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="essay-section">
+          <h3>IV · 现存 · What Remains</h3>
+          <div class="bi">
+            <div class="zh">
+              <p>没有录音。没有照片。没有视频。每位 Patrons 获得一页手绘声谱 — 是一位声学研究者在林中实时记录的渔鸮叫声波形图，标注了每次人声回应的时间戳。声谱不能代表那一夜发生了什么，它只是一张纸上的痕迹。</p>
+            </div>
+            <div class="en">
+              <p>No recording. No photograph, no video. Each Patron received a hand-drawn spectrogram — a waveform of the fish-owl's call recorded in real time by an acoustic researcher in the forest, annotated with timestamps of each human response. The spectrogram cannot represent what happened that night; it is only a trace on paper.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="essay-section" style="border-top:1px solid var(--rule); padding-top:48px;">
+          <h3 style="color:#fff;">下一站 · Next World</h3>
+          <p style="font-family:'Noto Serif SC',serif; font-size:17px; line-height:1.85; color:rgba(255,255,255,0.86); margin-bottom:24px;">
+            <a href="world-the-loom.html" style="color:var(--gold); font-weight:500; text-decoration:none;">V · 织梦 The Loom</a> — 比利牛斯石场，2025–2026。正在制作。
+          </p>
+          <a href="worlds.html" class="btn btn-ghost">← 返回 Worlds 列表</a>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <span>© REVERIE · WORLD IV OF VII</span>
+    <span><a href="connect.html">申请入会 / Apply</a></span>
+  </footer>
+
+  <script src="assets/reveal.js"></script>
+  <script type="module" src="assets/background-shader.js"></script>
+</body>
+</html>

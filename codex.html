@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>典籍 Codex — REVERIE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Imprima&family=Noto+Sans+SC:wght@300;400&family=Noto+Serif+SC:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js"
+    }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-group essential">
+      <a href="worlds.html">世界 Worlds</a>
+      <a href="atelier.html">工坊 Atelier</a>
+      <a href="immersions.html">沉浸 Immersions</a>
+    </div>
+    <a href="index.html" class="logo" aria-label="REVERIE 首页">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="M15 3l2.2 6.6h7l-5.7 4 2.2 6.6L15 16.5l-5.7 3.7 2.2-6.6-5.7-4h7L15 3z" fill="#fff" opacity="0.95"/>
+      </svg>
+    </a>
+    <div class="nav-group">
+      <a href="craft.html">匠心 Craft</a>
+      <a href="codex.html" class="is-current">典籍 Codex</a>
+      <a href="connect.html">联络 Connect</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section style="position:relative; margin:-140px -48px 48px; padding:200px 48px 80px; background:#1a1310 center/cover no-repeat; background-image:url('assets/scenes/codex-hero.png'); overflow:hidden;">
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,6,8,0.78) 0%, rgba(10,6,8,0.55) 40%, rgba(10,6,8,0.95) 100%);"></div>
+      <div style="position:relative; max-width:960px; margin:0 auto;">
+        <span class="eyebrow">ARCHIVE · 2018 — 2026</span>
+        <h1 class="display page-hero-title" style="font-size:clamp(48px,7vw,96px); margin-bottom:16px;">典籍 · Codex</h1>
+        <p class="page-hero-desc" style="font-family:'Noto Serif SC',serif; font-size:clamp(14px,1.2vw,17px); max-width:64ch; color:rgba(255,255,255,0.86); line-height:1.85; margin-bottom:0;">这里存放着不属于任何特定 World 的记录：那些没有被写入详情页的碎片、被发现但未被采用的地点、以及由 Patrons 在离开后寄回的信件摘录。</p>
+        <p style="font-family:'Imprima',sans-serif; font-style:italic; font-size:clamp(13px,1vw,15px); color:rgba(255,255,255,0.55); margin-top:10px; margin-bottom:0;">Fragments that belong to no single World: places scouted but never used, letters Patrons sent after leaving, and quiet notes from the field.</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <!-- Entry 1 -->
+    <section class="essay-section">
+      <h3>I · 遗落的坐标 · Lost Coordinates</h3>
+      <div class="bi">
+        <div class="zh">
+          <p>在决定空之合唱的森林地点之前，团队在巴伐利亚和波希米亚边境勘察了七处林区。其中一个是已经禁止进入超过三十年的军事禁区，卫星图像显示那片林子从未被砍伐过。我们最终没有选择它——不是因为无法获准进入，而是因为它太完美了。</p>
+          <p style="margin-top:12px; border-left:1px solid var(--gold); padding-left:16px; color:rgba(255,255,255,0.6); font-style:italic;">坐标：49°12'N, 12°59'E —— 未进入，已归还给寂静。</p>
+        </div>
+        <div class="en">
+          <p>Before settling on the forest for Hollow Choir, the team scouted seven woodlands along the Bavarian-Bohemian border. One had been a restricted military zone for over thirty years — satellite images showed it had never been logged. We did not choose it in the end, not because access was denied, but because it was too perfect.</p>
+          <p style="margin-top:12px; border-left:1px solid var(--gold); padding-left:16px; color:rgba(255,255,255,0.55); font-style:italic;">Coordinates: 49°12'N, 12°59'E — never entered, returned to silence.</p>
+        </div>
+      </div>
+    </section>
+
+    <div style="margin:24px 0 64px;">
+      <div class="image-strip">
+        <div class="frame" style="background-image:url('assets/scenes/hollow-choir-forest.png')"></div>
+        <div class="frame" style="background-image:url('assets/scenes/hollow-choir-ring.png')"></div>
+        <div class="frame" style="background-image:url('assets/scenes/salt-oratorio-stone.png')"></div>
+      </div>
+    </div>
+
+    <!-- Entry 2 -->
+    <section class="essay-section">
+      <h3>II · 来自 Patrons 的信 · Letters</h3>
+      <div class="bi">
+        <div class="zh">
+          <p>一位 Patron 在参加完盐之颂歌之后半年寄来一封信。信中说她回到家之后，把那块融了一半的岩盐碎片放在冰箱里存了两个月，决定不再让它继续融化。</p>
+          <p>她在信末写道："它已经不再是石头了。它是我手心的一个形状。"</p>
+        </div>
+        <div class="en">
+          <p>A Patron wrote to us half a year after Salt Oratorio. She said she kept the half-melted salt chip in her freezer for two months, deciding not to let it dissolve any further.</p>
+          <p>She wrote: "It is no longer a stone. It is a shape of my palm."</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entry 3 -->
+    <section class="essay-section">
+      <h3>III · 沉默的度量 · A Measure of Silence</h3>
+      <div class="bi">
+        <div class="zh">
+          <p>在枭时的八夜中，向导记录了一个数据：平均每位 Patron 从进入林子到第一次开口说话（回到小屋后）之间的沉默时长是 5 小时 28 分钟。最长的纪录是 7 小时 12 分钟——那位 Patron 在第二天告诉向导，她不是不想说话，是忘了怎么说了。</p>
+        </div>
+        <div class="en">
+          <p>Over the eight nights of Owl Hours, the guide recorded a quiet statistic: the average time between a Patron entering the forest and their first spoken word back at the cabin was 5 hours 28 minutes. The longest was 7 hours 12 minutes — that Patron said the next day she had not forgotten how to speak; she had forgotten that she could.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entry 4 -->
+    <section class="essay-section">
+      <h3>IV · 未被采用的名称 · Rejected Titles</h3>
+      <div class="bi">
+        <div class="zh">
+          <p>每一项 World 在最终命名之前都有过至少二十个被放弃的方案。以下是几个我们最喜欢的遗珠：</p>
+          <p style="margin-top:12px;">
+            · 空之合唱最初叫《气管》（Windpipes）<br>
+            · 潮汐图谱曾叫《大西洋的呼吸》（The Atlantic's Breath）<br>
+            · 盐之颂歌在第一天就叫盐之颂歌——它是唯一没有被改过的。<br>
+            · 织梦的内部代号是《线头》（Thread）。
+          </p>
+        </div>
+        <div class="en">
+          <p>Every World had at least twenty rejected titles before its final name. A few favourites:</p>
+          <p style="margin-top:12px;">
+            · Hollow Choir was first called <em>Windpipes</em>.<br>
+            · Tide Atlas was nearly <em>The Atlantic's Breath</em>.<br>
+            · Salt Oratorio was Salt Oratorio from day one — the only one never changed.<br>
+            · The Loom's internal code was <em>Thread</em>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="rule" style="margin:80px 0 48px;">
+
+    <section class="essay-section" style="border-top:1px solid var(--rule); padding-top:48px;">
+      <h3 style="color:#fff;">贡献你的记录 · Contribute</h3>
+      <p style="font-family:'Noto Serif SC',serif; font-size:16px; line-height:1.85; color:rgba(255,255,255,0.82); max-width:48ch; margin-bottom:8px;">
+        如果你曾是 Patron，愿意分享你的手写信或未被记录的碎片，可以寄到这里。我们会不定期更新 Codex。
+      </p>
+      <p style="font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:0.06em; color:var(--gold); margin-bottom:24px;">
+        codex@reverie.studio
+      </p>
+      <a href="worlds.html" class="btn btn-ghost">← 返回 Worlds 列表</a>
+    </section>
+  </main>
+
+  <footer class="site-foot">
+    <span>© REVERIE · CODEX · 不定期更新</span>
+    <span><a href="connect.html">申请入会 / Apply</a></span>
+  </footer>
+
+  <script src="assets/reveal.js"></script>
+  <script type="module" src="assets/background-shader.js"></script>
+</body>
+</html>

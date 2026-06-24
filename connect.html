@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>联络 Connect — REVERIE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Imprima&family=Noto+Sans+SC:wght@300;400&family=Noto+Serif+SC:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js"
+    }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-group essential">
+      <a href="worlds.html">世界 Worlds</a>
+      <a href="atelier.html">工坊 Atelier</a>
+      <a href="immersions.html">沉浸 Immersions</a>
+    </div>
+    <a href="index.html" class="logo" aria-label="REVERIE 首页">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="M15 3l2.2 6.6h7l-5.7 4 2.2 6.6L15 16.5l-5.7 3.7 2.2-6.6-5.7-4h7L15 3z" fill="#fff" opacity="0.95"/>
+      </svg>
+    </a>
+    <div class="nav-group">
+      <a href="craft.html">匠心 Craft</a>
+      <a href="codex.html">典籍 Codex</a>
+      <a href="connect.html" class="is-current">联络 Connect</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <section style="position:relative; margin:-140px -48px 48px; padding:200px 48px 80px; background:#1a1310 center/cover no-repeat; background-image:url('assets/scenes/connect-hero.png'); overflow:hidden;">
+      <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(10,6,8,0.78) 0%, rgba(10,6,8,0.55) 40%, rgba(10,6,8,0.95) 100%);"></div>
+      <div style="position:relative; max-width:960px; margin:0 auto;">
+        <span class="eyebrow">XXXII · PATRONS · 自 2018</span>
+        <h1 class="display page-hero-title" style="font-size:clamp(48px,7vw,96px); margin-bottom:16px;">三十二人之约</h1>
+        <p class="page-hero-desc" style="font-family:'Noto Serif SC',serif; font-size:clamp(14px,1.2vw,17px); max-width:64ch; color:rgba(255,255,255,0.86); line-height:1.85; margin-bottom:0;">REVERIE 不卖票。我们一年只允许 32 位 Patrons 同时在册 — 每年由现任 Patrons 引荐 1 — 3 位新人，名额由作品现场可承载的人数决定，不可议价。</p>
+        <p style="font-family:'Imprima',sans-serif; font-style:italic; font-size:clamp(13px,1vw,15px); color:rgba(255,255,255,0.55); margin-top:10px; margin-bottom:0;">REVERIE does not sell tickets. We hold thirty-two Patrons at any given time — one to three are introduced each year by the current roster, capped at what each World can hold on site. Not negotiable.</p>
+      </div>
+    </section>
+
+    <hr class="rule">
+
+    <div class="connect-grid">
+
+      <div>
+        <div class="tally">
+          <span class="big">XXXII</span>
+          <span>PATRONS · 当前在册<br><span class="gold">III 名额释出 · 2026 年初</span></span>
+        </div>
+
+        <h2 class="display" style="font-size:36px; margin-bottom:24px;">入会承诺</h2>
+        <p style="font-family:'Imprima',sans-serif; font-style:italic; font-size:14px; color:rgba(255,255,255,0.55); margin-bottom:32px;">Five things we ask, in return for what we make.</p>
+
+        <ol class="commitments">
+          <li><strong style="color:#fff; font-family:'Noto Serif SC',serif;">亲赴 · Attend in person.</strong> 不远程接入、不替代出席、不转赠席位。</li>
+          <li><strong style="color:#fff; font-family:'Noto Serif SC',serif;">不录制 · Do not record.</strong> 我们的作品的存在方式之一就是不被复制。</li>
+          <li><strong style="color:#fff; font-family:'Noto Serif SC',serif;">引荐 · Introduce.</strong> 每年由你引荐 0 — 1 位你愿担保的人。</li>
+          <li><strong style="color:#fff; font-family:'Noto Serif SC',serif;">资助 · Sustain.</strong> 年度承诺金额由 Patrons 议会与你私下商定。</li>
+          <li><strong style="color:#fff; font-family:'Noto Serif SC',serif;">沉默 · Hold silence.</strong> 关于现场所发生的事，由你决定要不要写、跟谁讲。</li>
+        </ol>
+
+        <hr class="rule" style="margin:48px 0 32px;">
+
+        <p style="font-family:'Imprima',sans-serif; font-size:13px; color:var(--mist); letter-spacing:0.04em; line-height:1.85;">
+          我们不公开 Patrons 名单。每年仅在 Atelier 内部刊物上署名、向同侪致意。<br>
+          <span style="font-style:italic; color:rgba(255,255,255,0.45); display:block; margin-top:6px;">We do not publish the roster. Once a year, names appear in the Atelier journal, in salute to peers.</span>
+        </p>
+      </div>
+
+      <div>
+        <form class="form" id="applyForm" novalidate>
+          <h2 class="display" style="font-size:28px; margin-bottom:6px;">申请入会</h2>
+          <p style="font-family:'Imprima',sans-serif; font-style:italic; font-size:13px; color:rgba(255,255,255,0.5); margin-bottom:14px;">Letter of introduction. We read every one.</p>
+
+          <div class="field">
+            <label for="f-name">姓名 · Name <span class="req">*</span></label>
+            <input type="text" id="f-name" name="name" required autocomplete="name">
+            <span class="field-error">请填写姓名 / Name required</span>
+          </div>
+
+          <div class="field">
+            <label for="f-email">邮箱 · Email <span class="req">*</span></label>
+            <input type="email" id="f-email" name="email" required autocomplete="email" placeholder="name@domain.com">
+            <span class="field-error">邮箱格式不正确 / Invalid email</span>
+          </div>
+
+          <div class="field">
+            <label for="f-ref">引荐人 · Introduced By</label>
+            <input type="text" id="f-ref" name="ref" placeholder="一位现任 Patron 的姓名 / Current Patron's name">
+          </div>
+
+          <div class="field">
+            <label for="f-city">所在地 · Based In</label>
+            <input type="text" id="f-city" name="city" placeholder="例如：上海 · 京都 · 哥本哈根">
+          </div>
+
+          <div class="field">
+            <label for="f-letter">一段话 · A Letter <span class="req">*</span></label>
+            <textarea id="f-letter" name="letter" required rows="6" placeholder="为什么是 REVERIE — 不必长，但请具体。&#10;Why REVERIE — not long, but specific."></textarea>
+            <span class="field-error">请写一段介绍 / Please write a short letter</span>
+          </div>
+
+          <button type="submit" class="btn">寄出 · Submit</button>
+        </form>
+
+        <div class="success-card" id="successCard">
+          <h3>已收到。</h3>
+          <p style="font-family:'Noto Serif SC',serif; font-size:15px; line-height:1.85; color:rgba(255,255,255,0.82); margin-bottom:14px;">
+            你的信已抵达 Atelier。我们读完每一封 — 通常在两到六周内回信。
+          </p>
+          <p style="font-family:'Imprima',sans-serif; font-size:13px; font-style:italic; color:rgba(255,255,255,0.55);">
+            Your letter has reached the Atelier. We read every one, and typically reply within two to six weeks.
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <hr class="rule">
+
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; margin-top:48px;">
+      <div>
+        <span class="eyebrow">私 信 · Private</span>
+        <p style="font-family:'Noto Serif SC',serif; font-size:15px; line-height:1.85; color:rgba(255,255,255,0.82); margin-bottom:8px;">
+          不愿走表格的，可以直接写一封信寄到这里。
+        </p>
+        <p style="font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:0.06em; color:#fff;">
+          atelier@reverie.studio
+        </p>
+      </div>
+      <div>
+        <span class="eyebrow">媒 体 · Press</span>
+        <p style="font-family:'Noto Serif SC',serif; font-size:15px; line-height:1.85; color:rgba(255,255,255,0.82); margin-bottom:8px;">
+          采访请求请提前 60 天寄信，附明你想写的体裁与角度。
+        </p>
+        <p style="font-family:'JetBrains Mono',monospace; font-size:13px; letter-spacing:0.06em; color:#fff;">
+          press@reverie.studio
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <span>© REVERIE · 32 PATRONS</span>
+    <span><a href="worlds.html">查看 Worlds</a></span>
+  </footer>
+
+  <script src="assets/reveal.js"></script>
+  <script>
+    (function () {
+      var form = document.getElementById('applyForm');
+      var ok = document.getElementById('successCard');
+      if (!form) return;
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var fields = form.querySelectorAll('.field');
+        var bad = false;
+        fields.forEach(function (f) {
+          var input = f.querySelector('input, textarea');
+          if (!input) return;
+          var v = input.value.trim();
+          var required = input.hasAttribute('required');
+          var isEmail = input.type === 'email';
+          var invalid = false;
+          if (required && !v) invalid = true;
+          if (isEmail && v && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) invalid = true;
+          f.classList.toggle('has-error', invalid);
+          if (invalid) bad = true;
+        });
+        if (bad) return;
+        form.style.display = 'none';
+        ok.classList.add('is-on');
+      });
+      form.querySelectorAll('input, textarea').forEach(function (i) {
+        i.addEventListener('input', function () {
+          var f = i.closest('.field');
+          if (f) f.classList.remove('has-error');
+        });
+      });
+    })();
+  </script>
+  <script type="module" src="assets/background-shader.js"></script>
+</body>
+</html>

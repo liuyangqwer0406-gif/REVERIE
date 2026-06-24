@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>世界 Worlds — REVERIE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Imprima&family=Noto+Sans+SC:wght@300;400&family=Noto+Serif+SC:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/site.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.152.0/build/three.module.js"
+    }
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+  <nav class="site-nav">
+    <div class="nav-group essential">
+      <a href="worlds.html" class="is-current">世界 Worlds</a>
+      <a href="atelier.html">工坊 Atelier</a>
+      <a href="immersions.html">沉浸 Immersions</a>
+    </div>
+    <a href="index.html" class="logo" aria-label="REVERIE 首页">
+      <svg width="30" height="30" viewBox="0 0 30 30" fill="none">
+        <path d="M15 3l2.2 6.6h7l-5.7 4 2.2 6.6L15 16.5l-5.7 3.7 2.2-6.6-5.7-4h7L15 3z" fill="#fff" opacity="0.95"/>
+      </svg>
+    </a>
+    <div class="nav-group">
+      <a href="craft.html">匠心 Craft</a>
+      <a href="codex.html">典籍 Codex</a>
+      <a href="connect.html">联络 Connect</a>
+    </div>
+  </nav>
+
+  <main class="page">
+    <span class="eyebrow">I — VII · Worlds 2018 — 2026</span>
+    <h1 class="display">已发生与<br>将发生之境</h1>
+    <p class="lede">
+      <span style="display:block; font-family:'Noto Serif SC',serif; margin-bottom:14px;">
+        每一件作品在某处荒野现场制作，向 32 位 Patrons 呈现一次，然后被悄悄封存。这里是七年的全部记录 — 五个已发生，一个正在制作，一个未公布。
+      </span>
+      <span style="display:block; font-style:italic; color:rgba(255,255,255,0.55); font-size:15px;">
+        Made on site, shown once, quietly archived. Seven years, five completed, one in residency, one unannounced.
+      </span>
+      <span class="worlds-summary">
+        <strong class="cs-count">6</strong>
+        <span class="cs-label">件已记录 / pieces on record</span>
+        <span class="cs-sep" aria-hidden="true">·</span>
+        <strong class="cs-count">1</strong>
+        <span class="cs-label">未公布 / unannounced</span>
+      </span>
+    </p>
+
+    <div class="filter-bar" role="group" aria-label="筛选">
+      <button type="button" class="chip is-on" data-filter="all" aria-pressed="true">全部 · ALL</button>
+      <button type="button" class="chip" data-filter="2025" aria-pressed="false">2025 — 2026</button>
+      <button type="button" class="chip" data-filter="2024" aria-pressed="false">2024</button>
+      <button type="button" class="chip" data-filter="2023" aria-pressed="false">2023</button>
+      <button type="button" class="chip" data-filter="sound" aria-pressed="false">声 · SOUND</button>
+      <button type="button" class="chip" data-filter="light" aria-pressed="false">光 · LIGHT</button>
+      <button type="button" class="chip" data-filter="ritual" aria-pressed="false">仪式 · RITUAL</button>
+    </div>
+
+    <div class="filter-status" role="status" aria-live="polite">
+      <span class="filter-status-text">展示全部 7 件 · showing all 7</span>
+    </div>
+    <div class="filter-empty" aria-live="polite" hidden>
+      <span class="filter-empty-text">没有匹配的作品 · no worlds match</span>
+    </div>
+
+    <div class="worlds-grid" id="worldsGrid">
+
+      <a class="world-row" data-tags="2024 sound light" href="world-hollow-choir.html">
+        <div class="thumb" style="background-image:url('assets/cards/card-hollow-choir.png')"></div>
+        <div class="body">
+          <h3>I · 空之合唱</h3>
+          <span class="en-title">Hollow Choir</span>
+          <p>14 夜，巴伐利亚黑森林。三十二支无声管风琴管悬于松冠之间，由森林的低频呼吸驱动。无观众席、无演出表 — 只有循着雾气进入的人。</p>
+        </div>
+        <div class="meta">
+          <span class="year">2024</span>
+          BAVARIAN FOREST<br>14 NIGHTS<br>
+          <span class="status-closed">CLOSED · ARCHIVED</span>
+        </div>
+      </a>
+
+      <a class="world-row" data-tags="2025 light ritual" href="world-tide-atlas.html">
+        <div class="thumb" style="background-image:url('assets/cards/card-tide-atlas.png')"></div>
+        <div class="body">
+          <h3>II · 潮汐图谱</h3>
+          <span class="en-title">Tide Atlas</span>
+          <p>6 周，法罗群岛海蚀洞。一组随潮汐起落而显隐的水印壁画 — 涨潮时全黑，退潮时仅露半小时。地图、潮汐表、火把，三件即全部。</p>
+        </div>
+        <div class="meta">
+          <span class="year">2025</span>
+          FAROE ISLANDS<br>6 WEEKS<br>
+          <span class="status-open">IN RESIDENCY</span>
+        </div>
+      </a>
+
+      <a class="world-row" data-tags="2023 ritual" href="world-salt-oratorio.html">
+        <div class="thumb" style="background-image:url('assets/cards/card-salt-oratorio.png')"></div>
+        <div class="body">
+          <h3>III · 盐之颂歌</h3>
+          <span class="en-title">Salt Oratorio</span>
+          <p>3 夜，阿塔卡马沙漠。一组用当地岩盐切削成的低频石琴，在零下 6 度的星空下被一次性击响。次日石琴被原地埋回。</p>
+        </div>
+        <div class="meta">
+          <span class="year">2023</span>
+          ATACAMA DESERT<br>3 NIGHTS<br>
+          <span class="status-closed">CLOSED · ARCHIVED</span>
+        </div>
+      </a>
+
+      <a class="world-row" data-tags="2024 sound" href="world-owl-hours.html">
+        <div class="thumb" style="background-image:url('assets/cards/card-owl-hours-v2.png')"></div>
+        <div class="body">
+          <h3>IV · 枭时</h3>
+          <span class="en-title">Owl Hours</span>
+          <p>8 夜，北海道原始森林。每夜 23:00 — 04:00 之间，由七位演奏者以鸟鸣回应森林本身的鸣叫，无谱、无指挥、无录音。</p>
+        </div>
+        <div class="meta">
+          <span class="year">2024</span>
+          HOKKAIDO · JAPAN<br>8 NIGHTS<br>
+          <span class="status-closed">CLOSED · ARCHIVED</span>
+        </div>
+      </a>
+
+      <a class="world-row" data-tags="2025 ritual" href="world-the-loom.html">
+        <div class="thumb" style="background-image:url('assets/cards/card-the-loom.png')"></div>
+        <div class="body">
+          <h3>V · 织梦</h3>
+          <span class="en-title">The Loom</span>
+          <p>11 个月，比利牛斯废弃石场。三百米长的羊毛织物在岩壁间缓慢编织。Patrons 每月可来一次，看它向前推进十米。完工之夜烧毁。</p>
+        </div>
+        <div class="meta">
+          <span class="year">2025–2026</span>
+          PYRENEES · SPAIN<br>11 MONTHS<br>
+          <span class="status-open">IN PROGRESS</span>
+        </div>
+      </a>
+
+      <div class="world-row world-row--empty" data-tags="2026">
+        <div class="thumb">
+          <span class="empty-mark" aria-hidden="true">——</span>
+        </div>
+        <div>
+          <h3>VI · ——</h3>
+          <span class="en-title">Untitled · 2026</span>
+          <p>地点保密；尺度未定。秋季公布给 Patrons，冬季对外封存名称。</p>
+        </div>
+        <div class="meta">
+          <span class="year">2026</span>
+          LOCATION SEALED<br>—<br>
+          <span class="status-closed">UNANNOUNCED</span>
+        </div>
+        <span class="empty-badge" aria-hidden="true">已封存名称 / name sealed</span>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="site-foot">
+    <span>© REVERIE · EST. 2018</span>
+    <span><a href="connect.html">申请入会 / Apply</a></span>
+  </footer>
+
+  <script>
+    (function () {
+      var chips = document.querySelectorAll('.chip');
+      var rows = document.querySelectorAll('.world-row');
+      var status = document.querySelector('.filter-status-text');
+      var empty = document.querySelector('.filter-empty');
+      var totalVisible = rows.length;
+
+      // Stagger entrance — reveal on load
+      rows.forEach(function (r, i) {
+        r.style.setProperty('--row-i', i);
+        r.classList.add('in-view');
+      });
+
+      function paint() {
+        var n = 0;
+        rows.forEach(function (r) {
+          if (r.classList.contains('is-hidden')) return;
+          n++;
+        });
+        if (status) {
+          var label = (n === totalVisible)
+            ? '展示全部 ' + n + ' 件 · showing all ' + n
+            : '展示 ' + n + ' / ' + totalVisible + ' 件 · showing ' + n + ' of ' + totalVisible;
+          status.textContent = label;
+        }
+        if (empty) {
+          empty.hidden = n > 0;
+        }
+      }
+
+      function apply(f) {
+        var matches = 0;
+        rows.forEach(function (r) {
+          var tags = (r.getAttribute('data-tags') || '').split(' ');
+          var ok = (f === 'all') || (tags.indexOf(f) >= 0);
+          r.classList.toggle('is-hidden', !ok);
+          if (ok) matches++;
+        });
+        return matches;
+      }
+
+      chips.forEach(function (c) {
+        c.addEventListener('click', function () {
+          chips.forEach(function (x) {
+            x.classList.remove('is-on');
+            x.setAttribute('aria-pressed', 'false');
+          });
+          c.classList.add('is-on');
+          c.setAttribute('aria-pressed', 'true');
+          var f = c.getAttribute('data-filter');
+          apply(f);
+          paint();
+        });
+        c.addEventListener('keydown', function (e) {
+          if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+          e.preventDefault();
+          var list = Array.prototype.slice.call(chips);
+          var i = list.indexOf(c);
+          var next = e.key === 'ArrowRight'
+            ? list[(i + 1) % list.length]
+            : list[(i - 1 + list.length) % list.length];
+          next.focus();
+          next.click();
+        });
+      });
+
+      paint();
+    })();
+  </script>
+  <script src="assets/reveal.js"></script>
+  <script type="module" src="assets/background-shader.js"></script>
+</body>
+</html>

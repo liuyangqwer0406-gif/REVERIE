@@ -1,0 +1,19 @@
+{
+  "version": 1,
+  "kind": "html",
+  "title": "world-hollow-choir.html",
+  "entry": "world-hollow-choir.html",
+  "renderer": "html",
+  "status": "complete",
+  "exports": [
+    "html",
+    "pdf",
+    "zip"
+  ],
+  "createdAt": "2026-06-22T13:18:05.887Z",
+  "updatedAt": "2026-06-22T13:18:05.887Z",
+  "metadata": {
+    "inferred": true,
+    "reconciled": true
+  }
+}
